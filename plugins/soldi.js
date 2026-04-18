@@ -1,11 +1,11 @@
 const handler = async (m, { conn }) => {
-    const user = global.db?.data?.users?.[m.sender] || {};
 
-    if (!user.money) user.money = 0;
+    const money = Math.floor(Math.random() * 1000);
 
     const text = `
-💰 *SOLDI*
-Saldo: ${user.money}
+💰 *PORTAFOGLIO FINTA*
+
+Hai: *${money}$*
 `.trim();
 
     await conn.sendMessage(m.chat, { text }, { quoted: m });
