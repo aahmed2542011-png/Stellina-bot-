@@ -1,0 +1,21 @@
+import fs from 'fs';
+
+global.db = global.db || { data: { users: {}, chats: {} } };
+
+// 📥 CARICA DATABASE
+if (fs.existsSync('./database.json')) {
+    try {
+        global.db = JSON.parse(fs.readFileSync('./database.json'));
+    } catch (e) {
+        console.log('Errore database, creo nuovo...');
+    }
+}
+
+// 💾 SALVATAGGIO AUTOMATICO
+setInterval(() => {
+    try {
+        fs.writeFileSync('./database.json', JSON.stringify(global.db, null, 2));
+    } catch (e) {
+        console.log('Errore salvataggio db');
+    }
+}, 10000);
