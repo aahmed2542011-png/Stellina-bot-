@@ -1,3 +1,4 @@
+import './core/db.js';
 import makeWASocket from '@whiskeysockets/baileys';
 import fs from 'fs';
 
