@@ -10,4 +10,9 @@ const handler = async (m, { conn }) => {
 };
 
 handler.all = true;
-export default handler;
+export default handler;if 
+    
+    
+    (global.db.data.users[m.sender]?.banned) return;
+
+
